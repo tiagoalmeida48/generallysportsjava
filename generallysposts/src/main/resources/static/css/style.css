@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  background: #fcfcfc;
+}
+.black-seuphone {
+	background-color: #212121;
+}
+.container-fluid  {
+  width: 90%;
+  margin: 0 auto;
+}
+.black-seuphone:hover, .black-seuphone:focus {
+	background-color: #444444;
+}
+
+.nav-menu nav li a i  {
+  font-size: 40px;
+}
+
+.nav-menu nav li a  {
+  text-transform: uppercase;
+}
+
+.produtos, .como-funciona, .sobre, .fale-conosco {
+  margin-top: 60px;
+}
+
+.nav-menu nav, .nav-menu nav li a i{
+  height: 50px;
+  line-height: 50px;
+}
+.logo {
+  vertical-align: middle;
+}
+
+.introducao h1 {
+  text-transform: uppercase;
+}
+
+.titulo {
+  font-size: 46px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+}
+.titulo:after {
+  content: "";
+  background-color: black;
+  height: 10px;
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+}
+.botao, .botao:active, .botao:focus {
+  background-color: transparent;
+  border: 2px solid black;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.2s;
+  color: black;
+}
+.botao:hover {
+  background-color: transparent;
+  border: 2px solid #acacac;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+
+.sobre h5, .como-funciona h5 {
+  text-align: left;
+}
+.sobre p, .como-funciona p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.sobre img, .como-funciona img {
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .350);
+}
+
+
+.fale-conosco .materialize-textarea {
+  border-bottom: 2px solid black;
+}
+.fale-conosco input[type="text"] {
+  border-bottom: 2px solid black;
+}
+
+.status-message p {
+	font-weight: bold;
+	padding: 10px 0;
+	
+}
+.status-message div {
+	border-radius: 10px;
+	min-width: 300px;
+}
+.status-message {
+	margin-top: 10px;
+	position: absolute;
+}
+
+.pagination li.active {
+	background-color: #212121;
+}
+
+#submenu {
+	top: -80px;
+}
+.linkRodape {
+  color: white;
+}
+.linkRodape:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.linkFotosHome1 span, .linkFotosHome2 span, .linkFotosHome3 span, .linkFotosHome4 span {
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: underline;
+  display: none;
+}
+.imgTrafeuHome {
+  width: 50px;
+  margin: 0 auto;
+}
+.zoom {
+  transition: transform .5s;
+}
+
+.zoom:hover{
+  transform: scale(1.1);
+  z-index: 3;
+}
+
+.centralizarMenuHome {
+  margin: 0 30%;
+  width: 100%;
+}
+.brand-logo img{
+  width: 150px;
+  margin: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px white;
+}
+.imgSobre {
+  width: 100%;
+  height: 300px;
+}
+.imgEquipeNew{
+  width: 400px;
+}
+.espaco {
+  margin-right: 5px !important;
+}
+.linkRedesSociais {
+  width: 150px;
+  text-align: left;
+  margin: 0 auto;
+}
+.spanLinkRedesSociais {
+  color: black;
+  position: relative;
+  top: -15px;
+  left: 5px;
+}
+.linkRedesSociais a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black !important;
+}
+.tituloCardAcademias {
+  background: black;
+  width: 100%;
+  opacity: 0.7;
+  text-align: center;
+}
+.paragrafo {
+  font-size: 20px;
+}
+ul.collapsible {
+  width: 70%;
+  margin: 0 auto;
+}
+.profile-avatar {
+  border-radius: 100px !important;
+  width: 100px !important;
+  height: 100px;
+}
+.avatarMenu {
+  width: 30px; 
+  height: 30px;
+  border-radius: 100px;
+  position: relative;
+  top: 10px;
+  right: 5px;
+}
