@@ -103,7 +103,7 @@
 										<div class="input-field col s12">
 											<i class="material-icons prefix">description</i>
 											<f:input path="descricao" cssClass="validate"
-												placeholder="iPhone 11 - 128GB - Dourado" />
+												placeholder="Descrição do Produto" />
 											<f:errors path="descricao" cssClass="helper-text red-text" />
 											<label for="descricao">Descrição</label>
 										</div>
@@ -128,61 +128,42 @@
 
 									<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">smartphone</i>
-											<f:input path="tipoProduto" cssClass="validate"
-												placeholder="Smartphone" />
-											<f:errors path="tipoProduto" cssClass="helper-text red-text" />
-											<label for="tipoProduto">Tipo de Produto</label>
+											<i class="material-icons prefix">Categoria</i>
+											<f:input path="categoria" cssClass="validate"
+												placeholder="Categoria" />
+											<f:errors path="categoria" cssClass="helper-text red-text" />
+											<label for="categoria">Categoria do Produto</label>
+											
 										</div>
 
-										<div class="input-field col s6">
-											<i class="material-icons prefix">phonelink_setup</i>
-											<f:input path="modelo" cssClass="validate"
-												placeholder="iPhone 11" />
-											<f:errors path="modelo" cssClass="helper-text red-text" />
-											<label for="modelo">Modelo</label>
-										</div>
-									</div>
+													
 
 									<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">border_color</i>
-											<f:input path="cor" cssClass="validate" placeholder="Dourado" />
-											<f:errors path="cor" cssClass="helper-text red-text" />
-											<label for="cor">Cor</label>
+											<i class="material-icons prefix"></i>
+											<f:input path="validade" class="datapicker" placeholder="validade" />
+											<f:errors path="validade" cssClass = "helper-text red-text" />
+											<label class="active">Validade</label>
 										</div>
 
+										<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">border_color</i>
-											<f:input path="corEmHexadecimal" cssClass="validate" placeholder="#ffffff" />
-											<f:errors path="corEmHexadecimal" cssClass="helper-text red-text" />
-											<label for="corEmHexadecimal">Cor em Hexadecimal</label>
+											<i class="material-icons prefix">attach_money</i>
+											<f:input path="custoUnitario" cssClass="validate" type="number"
+												 placeholder="0,00" />
+											<f:errors path="custoUnitario" cssClass="helper-text red-text" />
+											<label for="custoUnitario">Custo Unitário</label>
 										</div>
 									</div>
-									
-									<div class="row">
-										<div class="input-field col s6">
-											<i class="material-icons prefix">fitness_center</i>
-											<f:input path="peso" cssClass="validate" placeholder="200g" />
-											<f:errors path="peso" cssClass="helper-text red-text" />
-											<label for="peso">Peso</label>
-										</div>
 										
-										<div class="input-field col s6">
-											<i class="material-icons prefix">fitness_center</i>
-											<f:input path="capacidade" cssClass="validate" placeholder="128gb" />
-											<f:errors path="capacidade" cssClass="helper-text red-text" />
-											<label for="capacidade">Capacidade</label>
-										</div>
-									</div>
 
 									<div class="row">
 										<div class="input-field col s6">
 											<i class="material-icons prefix">attach_money</i>
-											<f:input path="valor" cssClass="validate" type="number"
-												step="0.01" placeholder="1999,99" />
-											<f:errors path="valor" cssClass="helper-text red-text" />
-											<label for="valor">Valor</label>
+											<f:input path="precoVenda" cssClass="validate" type="number"
+												 placeholder="0,00" />
+											<f:errors path="precoVenda" cssClass="helper-text red-text" />
+											<label for="precoVenda">Preço de Venda</label>
 										</div>
 									</div>
 

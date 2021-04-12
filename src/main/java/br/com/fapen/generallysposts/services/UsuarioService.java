@@ -18,6 +18,7 @@ import br.com.fapen.generallysposts.forms.UsuarioForm;
 import br.com.fapen.generallysposts.models.Perfil;
 import br.com.fapen.generallysposts.models.Usuario;
 import br.com.fapen.generallysposts.repositories.Paginacao;
+import br.com.fapen.generallysposts.repositories.PerfilRepository;
 import br.com.fapen.generallysposts.repositories.UsuarioRepository;
 
 @Service
@@ -26,12 +27,14 @@ public class UsuarioService implements UserDetailsService {
 	@Autowired
 	private UsuarioRepository usuarioRep;
 	
+	
 	@Override
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 		Usuario usuarioEncontrado = usuarioRep.findByLogin(login);
 		
 		return usuarioEncontrado;
 	}
+
 	
 	public Page<Usuario> listarUsuarios(String busca, Integer pagina, Principal principal) {
 		

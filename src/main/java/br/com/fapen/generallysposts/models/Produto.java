@@ -1,5 +1,8 @@
 package br.com.fapen.generallysposts.models;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 @Entity(name = "tb_produto")
 public class Produto {
 
@@ -17,11 +23,9 @@ public class Produto {
 	@Column(name = "id_produto")
 	private Long idProduto;
 	
-	@Column(name = "tipo_produto", length = 100)
-	private String tipoProduto;
-	
-	@Column(length = 100)
-	private String modelo;
+	private BigDecimal custoUnitario;
+	private BigDecimal precoVenda;
+	private Double saldoAtual;
 	
 	@Column(nullable = false)
 	private Double valor;
@@ -35,12 +39,13 @@ public class Produto {
 	@Column(length = 255)
 	private String descricao;
 	
-	@Column(name = "cor_em_hexadecimal")
-	private String corEmHexadecimal;
-	
 	@Column
-	private String capacidade;
+	private String categoria;
 	
+	@DateTimeFormat(iso = ISO.DATE)
+	@Column(name = "data_validade")
+	private LocalDate validade;
+
 	@Column(name = "quantidade_estoque")
 	private int quantidadeEstoque;
 	
@@ -63,22 +68,6 @@ public class Produto {
 
 	public void setIdProduto(Long idProduto) {
 		this.idProduto = idProduto;
-	}
-
-	public String getTipoProduto() {
-		return tipoProduto;
-	}
-
-	public void setTipoProduto(String tipoProduto) {
-		this.tipoProduto = tipoProduto;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
 	}
 
 	public Double getValor() {
@@ -153,35 +142,62 @@ public class Produto {
 		this.fotoEmString = fotoEmString;
 	}
 
-	public String getCorEmHexadecimal() {
-		return corEmHexadecimal;
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setCorEmHexadecimal(String corEmHexadecimal) {
-		this.corEmHexadecimal = corEmHexadecimal;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
+	
+
+	public LocalDate getValidade() {
+		return validade;
 	}
 
-	public String getCapacidade() {
-		return capacidade;
+	public void setValidade(LocalDate validade) {
+		this.validade = validade;
 	}
 
-	public void setCapacidade(String capacidade) {
-		this.capacidade = capacidade;
+	public BigDecimal getCustoUnitario() {
+		return custoUnitario;
 	}
+
+	public void setCustoUnitario(BigDecimal custoUnitario) {
+		this.custoUnitario = custoUnitario;
+	}
+
+	public BigDecimal getPrecoVenda() {
+		return precoVenda;
+	}
+
+	public void setPrecoVenda(BigDecimal precoVenda) {
+		this.precoVenda = precoVenda;
+	}
+
+	public Double getSaldoAtual() {
+		return saldoAtual;
+	}
+
+	public void setSaldoAtual(Double saldoAtual) {
+		this.saldoAtual = saldoAtual;
+	}
+	
+	
 
 	@Override
 	public String toString() {
-		return "Produto [idProduto=" + idProduto + ", tipoProduto=" + tipoProduto + ", modelo=" + modelo + ", valor="
+		return "Produto [idProduto=" + idProduto + ", tipoProduto=" + ", valor="
 				+ valor + ", peso=" + peso + ", cor=" + cor + ", descricao=" + descricao + ", corEmHexadecimal="
-				+ corEmHexadecimal + ", capacidade=" + capacidade + ", quantidadeEstoque=" + quantidadeEstoque
+				+ ", quantidadeEstoque=" + quantidadeEstoque
 				+ ", caminhoFoto=" + caminhoFoto + ", fotoEmString=" + fotoEmString + ", fornecedor=" + fornecedor
-				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getTipoProduto()="
-				+ getTipoProduto() + ", getModelo()=" + getModelo() + ", getValor()=" + getValor() + ", getPeso()="
+				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getValor()=" + getValor() + ", getPeso()="
 				+ getPeso() + ", getCor()=" + getCor() + ", getDescricao()=" + getDescricao()
 				+ ", getQuantidadeEstoque()=" + getQuantidadeEstoque() + ", isInativo()=" + isInativo()
 				+ ", getFornecedor()=" + getFornecedor() + ", getCaminhoFoto()=" + getCaminhoFoto()
-				+ ", getFotoEmString()=" + getFotoEmString() + ", getCorEmHexadecimal()=" + getCorEmHexadecimal()
-				+ ", getCapacidade()=" + getCapacidade() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", getFotoEmString()=" + getFotoEmString() 
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}
 	

@@ -23,6 +23,7 @@ import br.com.fapen.generallysposts.filters.JwtRequestFilter;
 @EnableWebSecurity
 public class GenerallySportsSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
 	@Autowired
 	private UserDetailsService usuarioService;
 
