@@ -57,7 +57,7 @@
 										<div class="input-field col s6">
 											<i class="material-icons prefix">description</i>
 											<f:input path="razaoSocial" cssClass="validate"
-												placeholder="Apple Computadores" />
+												placeholder="Razão Social" />
 											<f:errors path="razaoSocial" cssClass="helper-text red-text" />
 											<label for="razaoSocial">Razão Social</label>
 										</div>
@@ -94,7 +94,7 @@
 										<div class="input-field col s6">
 											<i class="material-icons prefix">description</i>
 											<f:input path="categoriaProduto" cssClass="validate"
-												placeholder="Smartphone" />
+												placeholder="Categoria" />
 											<f:errors path="categoriaProduto"
 												cssClass="helper-text red-text" />
 											<label for="categoriaProduto">Categoria Produto</label>

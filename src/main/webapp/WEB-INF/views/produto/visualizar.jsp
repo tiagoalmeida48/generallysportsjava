@@ -76,23 +76,9 @@
 											<td>Fornecedor:</td>
 											<td>${produto.fornecedor.razaoSocial}</td>
 										</tr>
-										<tr>
-											<td>Tipo de Produto:</td>
-											<td>${produto.tipoProduto}</td>
-										</tr>
-										<tr>
-											<td>Modelo:</td>
-											<td>${produto.modelo}</td>
-										</tr>
-										<tr>
-											<td>Cor:</td>
-											<td>${produto.cor}</td>
-										</tr>
-										<tr>
-											<td>Peso:</td>
-											<td>${produto.peso}</td>
-										</tr>
-										<tr>
+									
+									
+																			<tr>
 											<td>Valor:</td>
 											<td><fmt:formatNumber value="${produto.valor}"
 													type="currency" /></td>

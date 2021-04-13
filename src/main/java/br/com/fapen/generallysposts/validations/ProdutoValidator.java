@@ -18,11 +18,11 @@ public class ProdutoValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descricao", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "tipoProduto", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "modelo", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cor", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "peso", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "valor", "campo.obrigatorio");
+	//	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "tipoProduto", "campo.obrigatorio");
+	//	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "modelo", "campo.obrigatorio");
+	//	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cor", "campo.obrigatorio");
+	//	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "peso", "campo.obrigatorio");
+	//	ValidationUtils.rejectIfEmptyOrWhitespace(errors, "valor", "campo.obrigatorio");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fornecedor", "campo.obrigatorio");
 	}
 }

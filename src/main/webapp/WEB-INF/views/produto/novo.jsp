@@ -91,7 +91,7 @@
 								</c:if>
 
 								<f:form method="POST"
-									action="${s:mvcUrl('salvarProduto').build() }"
+									action="${s:mvcUrl('salvarProduto').build() }" 
 									modelAttribute="produto" class="col s12">
 									<f:hidden path="idProduto" />
 
