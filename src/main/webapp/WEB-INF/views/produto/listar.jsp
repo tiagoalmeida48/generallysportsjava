@@ -79,7 +79,6 @@
 								<th>Imagem</th>
 								<th>Descrição</th>
 								<th>Fornecedor</th>
-								<th>Tipo de Produto</th>
 								<th>Valor</th>
 								<th>Status</th>
 								<th class="center-align">Ação</th>
@@ -99,8 +98,12 @@
 									</td>
 									<td>${produto.descricao}</td>
 									<td>${produto.fornecedor.razaoSocial }</td>
+<<<<<<< HEAD
 									<!-- <td>${produto.tipoProduto}</td> -->
 									<td><fmt:formatNumber value="${produto.valor}" type="currency" /></td>
+=======
+									<td><fmt:formatNumber value="${produto.saldoAtual}" type="currency" /></td>
+>>>>>>> b534f6d1231a14df1f22d68f6b912a512f7855f3
 									<td>
 										<c:if test="${!produto.inativo }">
 											<div class="chip green-text">Ativo</div>

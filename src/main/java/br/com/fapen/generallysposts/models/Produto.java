@@ -27,15 +27,7 @@ public class Produto {
 	private BigDecimal precoVenda;
 	private Double saldoAtual;
 	
-	@Column(nullable = false)
-	private Double valor;
-	
-	@Column(length = 100)
-	private String peso;
-	
-	@Column(length = 100)
-	private String cor;
-	
+
 	@Column(length = 255)
 	private String descricao;
 	
@@ -70,29 +62,6 @@ public class Produto {
 		this.idProduto = idProduto;
 	}
 
-	public Double getValor() {
-		return valor;
-	}
-
-	public void setValor(Double valor) {
-		this.valor = valor;
-	}
-
-	public String getPeso() {
-		return peso;
-	}
-
-	public void setPeso(String peso) {
-		this.peso = peso;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
 
 	public String getDescricao() {
 		return descricao;
@@ -188,12 +157,9 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [idProduto=" + idProduto + ", tipoProduto=" + ", valor="
-				+ valor + ", peso=" + peso + ", cor=" + cor + ", descricao=" + descricao + ", corEmHexadecimal="
-				+ ", quantidadeEstoque=" + quantidadeEstoque
+		return "Produto [idProduto=" + idProduto + ", descricao=" + descricao + ", quantidadeEstoque=" + quantidadeEstoque
 				+ ", caminhoFoto=" + caminhoFoto + ", fotoEmString=" + fotoEmString + ", fornecedor=" + fornecedor
-				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getValor()=" + getValor() + ", getPeso()="
-				+ getPeso() + ", getCor()=" + getCor() + ", getDescricao()=" + getDescricao()
+				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getDescricao()=" + getDescricao()
 				+ ", getQuantidadeEstoque()=" + getQuantidadeEstoque() + ", isInativo()=" + isInativo()
 				+ ", getFornecedor()=" + getFornecedor() + ", getCaminhoFoto()=" + getCaminhoFoto()
 				+ ", getFotoEmString()=" + getFotoEmString() 
