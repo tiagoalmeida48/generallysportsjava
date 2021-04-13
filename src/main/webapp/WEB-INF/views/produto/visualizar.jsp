@@ -80,7 +80,7 @@
 									
 																			<tr>
 											<td>Valor:</td>
-											<td><fmt:formatNumber value="${produto.valor}"
+											<td><fmt:formatNumber value="${produto.saldoAtual}"
 													type="currency" /></td>
 										</tr>
 										<tr>
