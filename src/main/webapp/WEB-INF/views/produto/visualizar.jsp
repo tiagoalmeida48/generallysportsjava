@@ -39,7 +39,7 @@
 
 		<div class="row">
 			<br> <br>
-			<h1>Produto</h1>
+			<h1 class="center">Produto</h1>
 
 			<br> <br>
 
@@ -63,7 +63,7 @@
 							</div>
 							<div class="card-content">
 								<h5 style="text-transform: uppercase;" class="black-text">
-									${produto.descricao}</h5>
+									${produto.nomeProduto}</h5>
 								<hr />
 
 								<table class="striped">
@@ -73,14 +73,17 @@
 											<td>${produto.idProduto}</td>
 										</tr>
 										<tr>
+											<td>Descrição:</td>
+											<td>${produto.descricao}</td>
+										</tr>
+										<tr>
 											<td>Fornecedor:</td>
 											<td>${produto.fornecedor.razaoSocial}</td>
 										</tr>
-									
-									
-																			<tr>
+								
+										<tr>
 											<td>Valor:</td>
-											<td><fmt:formatNumber value="${produto.saldoAtual}"
+											<td><fmt:formatNumber value="${produto.precoVenda}"
 													type="currency" /></td>
 										</tr>
 										<tr>

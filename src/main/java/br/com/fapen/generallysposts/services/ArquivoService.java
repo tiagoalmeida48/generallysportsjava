@@ -13,8 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class ArquivoService {
 
 	// Necessário alterar caminho das imagens salvas caso esteja em uma máquina diferente
-	public static final String DIRETORIO_BASE = "C:/Users/Tiago/Documents/Programação Java/generallysports/src/main/resources/static/img/media/";
-	
+	public static final String DIRETORIO_BASE = "C:/Users/Tiago/Documents/Programação Java/generallysportsjava/src/main/resources/static/img/media/";
+
 	public String salvarArquivo(MultipartFile arquivo) {
 		String caminhoFisico = DIRETORIO_BASE;
 		
@@ -36,7 +36,7 @@ public class ArquivoService {
 	}
 	
 	public String ImageToString(String caminhoFoto) throws IOException {
-		File f = new File("C:/Users/Tiago/Documents/Programação Java/generallysports/src/main/resources/static/img/" + caminhoFoto);
+		File f = new File("C:/Users/Tiago/Documents/Programação Java/generallysportsjava/src/main/resources/static/img/" + caminhoFoto);
 		FileInputStream fis = new FileInputStream(f);
 		
 		byte[] bytes = new byte[(int)f.length()];

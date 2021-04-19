@@ -30,7 +30,7 @@
 								name="itens[${status.index }].verificado" /> <span>OK</span>
 						</label></p> <f:errors path="itens[${status.index }].verificado"
 								cssClass="helper-text red-text" /></td>
-						<td>${itemReceb.produto.descricao }</td>
+						<td>${itemReceb.produto.nomeProduto }</td>
 						<td>${itemReceb.quantidade }</td>
 						<td>${itemReceb.precoUnitario }</td>
 						<td>${itemReceb.valorTotal }</td>

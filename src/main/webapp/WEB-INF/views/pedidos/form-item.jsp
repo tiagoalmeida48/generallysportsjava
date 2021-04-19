@@ -13,12 +13,12 @@
 					<f:hidden path="itensPedidoCompra[${status.index}].idDescricao"/>
 					<f:hidden path="itensPedidoCompra[${status.index}].pedido"/>
 					<div class="row">
-						<div class="input-field col s4">
+						<div class="input-field col s3">
 							<f:select path="itensPedidoCompra[${status.index}].produto" cssClass="validate">
 								<f:option value="">Selecione</f:option>
-								<f:options items="${listaProdutos}" itemValue="idProduto" itemLabel="descricao"/>
+								<f:options items="${listaProdutos}" itemValue="idProduto" itemLabel="nomeProduto"/>
 							</f:select>												
-							<label class="active" for="itensPedidoCompra[${status.index}].produto">Produto</label>
+							<label for="itensPedidoCompra[${status.index}].produto">Produto</label>
 							<f:errors path="itensPedidoCompra[${status.index}].produto" cssClass="helper-text" />
 						</div>
 						
@@ -34,7 +34,7 @@
 							<f:errors path="itensPedidoCompra[${status.index}].valor" cssClass="helper-text" />
 						</div>
 						
-						<div class="input-field col s2">
+						<div class="input-field col s3">
 							<button class="btn-small red deletaItem" title="excluir" type="button" value="${status.index}">
 								<i class="material-icons">delete</i>
 							</button>

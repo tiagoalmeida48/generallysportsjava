@@ -51,14 +51,9 @@
 					<div class="card ">
 
 						<div class="card-content">
-							<span class="card-title"><h1>Produto</h1></span>
+							<span class="card-title center"><h1>Produto</h1></span>
 
 							<div class="row">
-
-
-
-
-
 								<c:if test="${produto.idProduto != null }">
 
 									<div class="card-image col s6">
@@ -97,10 +92,14 @@
 
 
 									<div class="row">
-
-
-
-										<div class="input-field col s12">
+										<div class="input-field col s6">
+											<i class="material-icons prefix">inventory_2</i>
+											<f:input path="nomeProduto" cssClass="validate"
+												placeholder="Nome do produto" />
+											<f:errors path="nomeProduto" cssClass="helper-text red-text" />
+											<label for="nomeProduto">Produto</label>
+										</div>
+										<div class="input-field col s6">
 											<i class="material-icons prefix">description</i>
 											<f:input path="descricao" cssClass="validate"
 												placeholder="Descrição do Produto" />
@@ -110,7 +109,7 @@
 									</div>
 									<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">description</i>
+											<i class="material-icons prefix">people</i>
 											<f:select path="fornecedor">
 												<c:if test="${produto.fornecedor != null }">
 													<f:option selected="true" value="${produto.fornecedor }"
@@ -122,64 +121,56 @@
 												</c:forEach>
 											</f:select>
 											<f:errors path="fornecedor" cssClass="helper-text red-text" />
-											<label for="fornecedor">Fornecedor</label>
 										</div>
-									</div>
-
-									<div class="row">
 										<div class="input-field col s6">
 											<i class="material-icons prefix">Categoria</i>
-											<f:input path="categoria" cssClass="validate"
-												placeholder="Categoria" />
+											<f:select path="categoria" id="categoria" cssClass="validate">
+												<f:option value="">Selecione uma categoria</f:option>
+												<f:option value="Acessórios">Acessórios</f:option>
+												<f:option value="Suplementos">Suplementos</f:option>
+												<f:option value="Modas">Modas</f:option>
+											</f:select>
 											<f:errors path="categoria" cssClass="helper-text red-text" />
-											<label for="categoria">Categoria do Produto</label>
-											
 										</div>
-
+									</div>
 													
-
 									<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix"></i>
-											<f:input path="validade" class="datapicker" placeholder="validade" />
+											<i class="material-icons prefix">today</i>
+											<f:input path="validade" class="datepicker" placeholder="validade" />
 											<f:errors path="validade" cssClass = "helper-text red-text" />
 											<label class="active">Validade</label>
 										</div>
-
-										<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">attach_money</i>
+											<i class="material-icons prefix">paid</i>
 											<f:input path="custoUnitario" cssClass="validate" type="number"
 												 placeholder="0,00" />
 											<f:errors path="custoUnitario" cssClass="helper-text red-text" />
 											<label for="custoUnitario">Custo Unitário</label>
 										</div>
 									</div>
-										
 
 									<div class="row">
 										<div class="input-field col s6">
-											<i class="material-icons prefix">attach_money</i>
+											<i class="material-icons prefix">paid</i>
 											<f:input path="precoVenda" cssClass="validate" type="number"
 												 placeholder="0,00" />
 											<f:errors path="precoVenda" cssClass="helper-text red-text" />
 											<label for="precoVenda">Preço de Venda</label>
 										</div>
-									</div>
-
-									<sec:authorize access="hasRole('ROLE_ADMIN')">
-										<div class="row">
-											<div class="input-field col s6">
-												<i class="material-icons prefix">description</i>
-												<f:select path="inativo" id="inativo" cssClass="validate">
-													<f:option value="false">Ativo</f:option>
-													<f:option value="true">Inativo</f:option>
-												</f:select>
-												<f:errors path="inativo" cssClass="helper-text red-text" />
-												<label for="inativo">Status do Produto</label>
+										<sec:authorize access="hasRole('ROLE_ADMIN')">
+												<div class="input-field col s6">
+													<i class="material-icons prefix">description</i>
+													<f:select path="inativo" id="inativo" cssClass="validate">
+														<f:option value="false">Ativo</f:option>
+														<f:option value="true">Inativo</f:option>
+													</f:select>
+													<f:errors path="inativo" cssClass="helper-text red-text" />
+													<label for="inativo">Status do Produto</label>
+												</div>
 											</div>
-										</div>
-									</sec:authorize>
+										</sec:authorize>
+									</div>
 							</div>
 
 						</div>

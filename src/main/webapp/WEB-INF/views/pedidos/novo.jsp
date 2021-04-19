@@ -90,7 +90,7 @@
 								</div>
 							</div>
 
-							<span class="card-title center-align titulo center"><p>Descrição
+							<span class="card-title center-align center"><p>Descrição
 									do Pedido</p>
 								<button id="btnNovoItem" type="button"
 									class="waves-effect waves-light btn-small green white-text right"
@@ -116,7 +116,7 @@
 																cssClass="validate">
 																<f:option value="">Selecione</f:option>
 																<f:options items="${listaProdutos}"
-																	itemValue="idProduto" itemLabel="descricao" />
+																	itemValue="idProduto" itemLabel="nomeProduto" />
 															</f:select>
 															<label class="active"
 																for="itensPedidoCompra[${status.index}].produto">Produto</label>

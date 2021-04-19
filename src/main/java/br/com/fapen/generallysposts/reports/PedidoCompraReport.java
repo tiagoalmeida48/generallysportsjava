@@ -137,7 +137,7 @@ public class PedidoCompraReport {
 						.setTextAlignment(TextAlignment.CENTER));
 				tabelaItens.addCell(new Paragraph(itemPed.getQuantidade().toString())
 						.setTextAlignment(TextAlignment.CENTER));
-				tabelaItens.addCell(new Paragraph(itemPed.getProduto().getValor().toString())
+				tabelaItens.addCell(new Paragraph(itemPed.getProduto().getSaldoAtual().toString())
 						.setTextAlignment(TextAlignment.CENTER));
 				tabelaItens.addCell(new Paragraph(pedidoService.calculaQtdTotal(itemPed).toString())
 						.setTextAlignment(TextAlignment.CENTER));

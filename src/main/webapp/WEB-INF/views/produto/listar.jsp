@@ -77,6 +77,7 @@
 							<tr>
 								<th>ID</th>
 								<th>Imagem</th>
+								<th>Produto</th>
 								<th>Descrição</th>
 								<th>Fornecedor</th>
 								<th>Valor</th>
@@ -96,11 +97,10 @@
 											<img src="/img/${produto.getCaminhoFoto() }" class="product-image" width=30 alt="Imagem do Produto">
 										</c:if>
 									</td>
+									<td>${produto.nomeProduto}</td>
 									<td>${produto.descricao}</td>
 									<td>${produto.fornecedor.razaoSocial }</td>
-
-									<!-- <td>${produto.categoria}</td> -->
-									<td><fmt:formatNumber value="${produto.saldoAtual}" type="currency" /></td>
+									<td><fmt:formatNumber value="${produto.precoVenda}" type="currency" /></td>
 
 									
 									<td>

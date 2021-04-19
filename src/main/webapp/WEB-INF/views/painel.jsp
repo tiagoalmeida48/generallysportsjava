@@ -23,139 +23,75 @@
 
 	<div class="container">
 		<div class="row center">
-			<br> <br>
 			<h1>Painel Administrativo</h1>
 
 			<div class="row">
-			
-			
-			
-				<div class="col s6">
-					<div style="padding: 35px;" align="center" class="card">
-						<div class="row">
-							<div class="left card-title">
-								<b>Gerenciamento de Usuário</b>
+				<div class="col s12">
+					<div class="row">
+						<a href="${s:mvcUrl('listarUsuarios').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">person</i>
+								<span class="white-text">
+									<h5>Usuários</h5>
+								</span>
 							</div>
-						</div>
-
-						<div class="row">
-							<a href="${s:mvcUrl('listarUsuarios').build() }">
-								<div style="padding: 30px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">person</i>
-									<span class="white-text">
-										<h5>Usuários</h5>
-									</span>
-								</div>
-							</a>
-							<div class="col s1">&nbsp;</div>
-							<div class="col s1">&nbsp;</div>
-
-							<a href="${s:mvcUrl('listarPerfis').build() }">
-								<div style="padding: 30px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">people</i>
-									<span class="white-text">
-										<h5>Perfis</h5>
-									</span>
-								</div>
-							</a>
-						</div>
+						</a>
+						<div class="col s1"></div>
+						<a href="${s:mvcUrl('listarPerfis').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">people</i>
+								<span class="white-text">
+									<h5>Perfis</h5>
+								</span>
+							</div>
+						</a>
+						<div class="col s1"></div>
+						<a href="${s:mvcUrl('listarProdutos').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">store</i>
+								<span class="white-text">
+									<h5>Produtos</h5>
+								</span>
+							</div>
+						</a>
 					</div>
-				</div>
-				
-
-				<div class="col s6">
-					<div style="padding: 35px;" align="center" class="card">
-						<div class="row">
-							<div class="left card-title">
-								<b>Gerenciamento de Produto</b>
+					<div class="row">
+						<a href="${s:mvcUrl('listarPedidos').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">assignment</i>
+								<span class="white-text">
+									<h5>Pedidos</h5>
+								</span>
 							</div>
-						</div>
-						<div class="row">
-							<a href="${s:mvcUrl('listarProdutos').build() }">
-								<div style="padding: 30px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">store</i>
-									<span class="white-text">
-										<h5>Produtos</h5>
-									</span>
-								</div>
-							</a>
-
-							<div class="col s1">&nbsp;</div>
-							<div class="col s1">&nbsp;</div>
-
-							<a href="${s:mvcUrl('listarPedidos').build() }">
-								<div style="padding: 30px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">assignment</i>
-									<span class="white-text">
-										<h5>Pedidos</h5>
-									</span>
-								</div>
-							</a>
-						</div>
+						</a>
+						<div class="col s1"></div>
+						<a href="${s:mvcUrl('listarFornecedores').build() }">
+							<div style="padding: 30px 20px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">business_center</i>
+								<span class="white-text">
+									<h5>Fornecedor</h5>
+								</span>
+							</div>
+						</a>
+						<div class="col s1"></div>
+						<a href="${s:mvcUrl('listarNotasFiscais').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">description</i>
+								<span class="white-text">
+									<h5>NFE</h5>
+								</span>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
-			
-			<div class="col s6">
-					<div style="padding: 35px;" align="center" class="card">
-						<div class="row">
-							<div class="left card-title">
-								<b>Gerenciamento de Fornecedores</b>
-							</div>
-						</div>
-
-						<div class="row">
-							<a href="${s:mvcUrl('listarFornecedores').build() }">
-								<div style="padding: 30px 20px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">business_center</i>
-									<span class="white-text">
-										<h5>Fornecedor</h5>
-									</span>
-								</div>
-							</a>
-							<div class="col s1">&nbsp;</div>
-							<div class="col s1">&nbsp;</div>
-							<div class="col s5">&nbsp;</div>
-
-							
-						</div>
-					</div>
-				</div>
-				
-				<div class="col s6">
-					<div style="padding: 35px;" align="center" class="card">
-						<div class="row">
-							<div class="left card-title">
-								<b>Gerenciamento de Nota Fiscal</b>
-							</div>
-						</div>
-
-						<div class="row">
-							<a href="${s:mvcUrl('listarNotasFiscais').build() }">
-								<div style="padding: 30px; border-radius: 10px;"
-									class="col s5 waves-effect black-seuphone">
-									<i class="white-text large material-icons">description</i>
-									<span class="white-text">
-										<h5>NFE</h5>
-									</span>
-								</div>
-							</a>
-							<div class="col s1">&nbsp;</div>
-							<div class="col s1">&nbsp;</div>
-							<div class="col s5">&nbsp;</div>
-
-							
-						</div>
-					</div>
-				</div>
-
 		</div>
-
 	</div>
 
 	<%@ include file="base/rodape.jsp"%>

@@ -28,11 +28,11 @@
 
 	<%@ include file="base/menu.jsp"%>
 
-	<div style="margin-top: 60px;" class="container">
+	<div style="margin-top: 60px;" class="container-fluid">
 		<div class="row center">
 			<div class="col s2"></div>
 			<div class="col s8">
-				<h1 class="titulo">Ocorreu um erro</h1>
+				<h1 class="center">Ocorreu um erro</h1>
 				<table class="centered">
 
 					<tr>

@@ -13,7 +13,7 @@
 					<div class="navbar-fixed">
 						<nav>
 							<div class="nav-wrapper blue darken-4">
-								<a href="#!" class="brand-logo"><img src="img/fundbig.png"></a>
+								<a href="#!" class="brand-logo"><img src="/img/fundbig.png"></a>
 								<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
 										class="material-icons">menu</i></a>
 								<ul class="centralizarMenuHome hide-on-med-and-down">

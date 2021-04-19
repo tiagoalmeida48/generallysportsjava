@@ -56,16 +56,23 @@ public class GenerallySportsSecurityConfig extends WebSecurityConfigurerAdapter 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 
-			http.cors().and().csrf().disable().antMatcher("/api/**").authorizeRequests().antMatchers("/api/usuarios/login")
-					.permitAll().antMatchers("/api/usuarios/criarUsuario").permitAll()
-					.antMatchers("/api/esqueci-senha").permitAll()
-					.antMatchers(HttpMethod.GET, "/api/produtos/**").permitAll().antMatchers(HttpMethod.POST, "/api/**")
-					.authenticated().antMatchers(HttpMethod.POST, "/api/produtos/**").authenticated()
-					.antMatchers(HttpMethod.POST, "/api/produtos").authenticated()
-					.antMatchers(HttpMethod.POST, "/api/usuarios/**").authenticated()
-					.antMatchers(HttpMethod.POST, "/api/usuarios").authenticated().anyRequest().authenticated().and()
-					.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-					.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().csrf().disable();
+			http.cors().and().csrf().disable()
+				.antMatcher("/api/**").authorizeRequests()
+				.antMatchers("/api/usuarios/login").permitAll()
+				.antMatchers("/api/usuarios/criarUsuario").permitAll()
+				.antMatchers("/api/esqueci-senha").permitAll()
+				.antMatchers(HttpMethod.GET, "/api/produtos/**").permitAll()
+				.antMatchers(HttpMethod.POST, "/api/**").authenticated()
+				.antMatchers(HttpMethod.POST, "/api/produtos/**").authenticated()
+				.antMatchers(HttpMethod.POST, "/api/produtos").authenticated()
+				.antMatchers(HttpMethod.POST, "/api/usuarios/**").authenticated()
+				.antMatchers(HttpMethod.POST, "/api/usuarios").authenticated()
+				.anyRequest().authenticated()
+				.and()
+				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+				.and()
+				.sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().csrf().disable();
 
 			http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		}
@@ -78,18 +85,47 @@ public class GenerallySportsSecurityConfig extends WebSecurityConfigurerAdapter 
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.authorizeRequests().antMatchers("/api/**").permitAll().antMatchers("/").permitAll().antMatchers("/home").permitAll().antMatchers("/sobre").permitAll().antMatchers("/contato").permitAll().antMatchers("/academias").permitAll().antMatchers("/clinicas").permitAll().antMatchers("/suplementos").permitAll().antMatchers("/acessorios").permitAll().antMatchers("/politica").permitAll().antMatchers("/perguntas").permitAll().antMatchers("/termos").permitAll().antMatchers("/seguranca").permitAll().antMatchers("/servicos").permitAll().antMatchers("/investidores").permitAll().antMatchers("/trocas").permitAll().antMatchers("/marketplace")
-					.permitAll().antMatchers("/error").permitAll().antMatchers("/js/**").permitAll().antMatchers("/css/**")
-					.permitAll().antMatchers("/img/**").permitAll().antMatchers("/esqueci-senha").permitAll()
-					.antMatchers("/esqueci-senha/**").permitAll().antMatchers("/recuperar-senha").permitAll()
-					.antMatchers("/recuperar-senha/**").permitAll().antMatchers(HttpMethod.POST, "/enviar-email").permitAll()
-					.antMatchers(HttpMethod.POST, "/trocar-senha").permitAll().antMatchers("/usuarios/meuperfil").authenticated()
-					.antMatchers("/usuarios/alterarFoto").authenticated().antMatchers("/usuarios/**").hasRole("ADMIN")
-					.antMatchers("/perfis/**").hasRole("ADMIN").antMatchers("/produtos/**/excluir").hasRole("ADMIN")
-					.antMatchers("/fornecedores/**/excluir").hasRole("ADMIN").antMatchers("/pedidos/**/excluir").hasRole("ADMIN")
-					.anyRequest().authenticated().and().formLogin().loginPage("/login").defaultSuccessUrl("/painel").permitAll()
-					.and().csrf().disable().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-					.logoutSuccessUrl("/");
+			http.authorizeRequests()
+				.antMatchers("/api/**").permitAll()
+				.antMatchers("/").permitAll()
+				.antMatchers("/home").permitAll()
+				.antMatchers("/sobre").permitAll()
+				.antMatchers("/contato").permitAll()
+				.antMatchers("/academias").permitAll()
+				.antMatchers("/clinicas").permitAll()
+				.antMatchers("/suplementos").permitAll()
+				.antMatchers("/acessorios").permitAll()
+				.antMatchers("/politica").permitAll()
+				.antMatchers("/perguntas").permitAll()
+				.antMatchers("/termos").permitAll()
+				.antMatchers("/seguranca").permitAll()
+				.antMatchers("/servicos").permitAll()
+				.antMatchers("/investidores").permitAll()
+				.antMatchers("/trocas").permitAll()
+				.antMatchers("/marketplace").permitAll()
+				.antMatchers("/error").permitAll()
+				.antMatchers("/js/**").permitAll()
+				.antMatchers("/css/**").permitAll()
+				.antMatchers("/img/**").permitAll()
+				.antMatchers("/esqueci-senha").permitAll()
+				.antMatchers("/esqueci-senha/**").permitAll()
+				.antMatchers("/recuperar-senha").permitAll()
+				.antMatchers("/recuperar-senha/**").permitAll()
+				.antMatchers(HttpMethod.POST, "/enviar-email").permitAll()
+				.antMatchers(HttpMethod.POST, "/trocar-senha").permitAll()
+				.antMatchers("/usuarios/meuperfil").authenticated()
+				.antMatchers("/usuarios/alterarFoto").authenticated()
+				.antMatchers("/usuarios/**").hasRole("ADMIN")
+				.antMatchers("/perfis/**").hasRole("ADMIN")
+				.antMatchers("/produtos/**/excluir").hasRole("ADMIN")
+				.antMatchers("/fornecedores/**/excluir").hasRole("ADMIN")
+				.antMatchers("/pedidos/**/excluir").hasRole("ADMIN")
+				.anyRequest().authenticated()
+				.and()
+				.formLogin().loginPage("/login").defaultSuccessUrl("/painel").permitAll()
+				.and()
+				.csrf().disable().logout()
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
 		}
 	}
 

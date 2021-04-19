@@ -12,8 +12,6 @@ public class DescricaoRecebimentoForm {
 	private BigDecimal precoUnitario;
 	private BigDecimal valorTotal;
 	
-	
-	
 	public boolean isVerificado() {
 		return verificado;
 	}

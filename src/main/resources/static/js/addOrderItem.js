@@ -42,7 +42,7 @@ $("body").on(
 				contentType : "application/json; charset=utf-8",
 				success : function(dados) {
 					console.log(dados);
-					elementoValor.val(dados.valor);
+					elementoValor.val(dados.precoVenda);
 				},
 				error : erroAjax
 			});

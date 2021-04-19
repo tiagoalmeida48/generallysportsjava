@@ -49,6 +49,21 @@ public class ProdutoApiController {
 		return produtos;
 	}
 
+	@GetMapping("/categoria/{categoria}")
+	public List<Produto> listarComCategoria(@PathVariable String categoria) throws IOException {
+		List<Produto> produtos = produtoRep.findAllByInativoFalseAndEstoqueAndCategoria(categoria);
+
+		for (Produto produto : produtos) {
+			if (produto.getCaminhoFoto() != null) {
+				produto.setFotoEmString(
+						"data:image/png;base64," + arquivoService.ImageToString(produto.getCaminhoFoto()));
+			} else {
+				produto.setFotoEmString("");
+			}
+		}
+		return produtos;
+	}
+
 	@GetMapping("/verificaEstoque/{id}")
 	public ResponseEntity<ResponseEstoqueDTO> verificaEstoque(@PathVariable Long id) {
 		

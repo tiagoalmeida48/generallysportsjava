@@ -27,7 +27,9 @@ public class Produto {
 	private BigDecimal precoVenda;
 	private Double saldoAtual;
 	
-
+	@Column(name = "produto")
+	private String nomeProduto;
+	
 	@Column(length = 255)
 	private String descricao;
 	
@@ -37,7 +39,7 @@ public class Produto {
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "data_validade")
 	private LocalDate validade;
-
+	
 	@Column(name = "quantidade_estoque")
 	private int quantidadeEstoque;
 	
@@ -49,10 +51,9 @@ public class Produto {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_fornecedor")
 	private Fornecedor fornecedor;
-	
+
 	@Column(columnDefinition = "boolean default false")
 	private boolean inativo;
-
 
 	public Long getIdProduto() {
 		return idProduto;
@@ -60,73 +61,6 @@ public class Produto {
 
 	public void setIdProduto(Long idProduto) {
 		this.idProduto = idProduto;
-	}
-
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public int getQuantidadeEstoque() {
-		return quantidadeEstoque;
-	}
-
-	public void setQuantidadeEstoque(int quantidadeEstoque) {
-		this.quantidadeEstoque = quantidadeEstoque;
-	}
-
-	public boolean isInativo() {
-		return inativo;
-	}
-
-	public void setInativo(boolean inativo) {
-		this.inativo = inativo;
-	}
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-	public String getCaminhoFoto() {
-		return caminhoFoto;
-	}
-
-	public void setCaminhoFoto(String caminhoFoto) {
-		this.caminhoFoto = caminhoFoto;
-	}
-
-	public String getFotoEmString() {
-		return fotoEmString;
-	}
-
-	public void setFotoEmString(String fotoEmString) {
-		this.fotoEmString = fotoEmString;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	
-	
-
-	public LocalDate getValidade() {
-		return validade;
-	}
-
-	public void setValidade(LocalDate validade) {
-		this.validade = validade;
 	}
 
 	public BigDecimal getCustoUnitario() {
@@ -152,21 +86,89 @@ public class Produto {
 	public void setSaldoAtual(Double saldoAtual) {
 		this.saldoAtual = saldoAtual;
 	}
-	
-	
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public LocalDate getValidade() {
+		return validade;
+	}
+
+	public void setValidade(LocalDate validade) {
+		this.validade = validade;
+	}
+
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
+	}
+
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+
+	public String getCaminhoFoto() {
+		return caminhoFoto;
+	}
+
+	public void setCaminhoFoto(String caminhoFoto) {
+		this.caminhoFoto = caminhoFoto;
+	}
+
+	public String getFotoEmString() {
+		return fotoEmString;
+	}
+
+	public void setFotoEmString(String fotoEmString) {
+		this.fotoEmString = fotoEmString;
+	}
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+
+	public boolean isInativo() {
+		return inativo;
+	}
+
+	public void setInativo(boolean inativo) {
+		this.inativo = inativo;
+	}
 
 	@Override
 	public String toString() {
-		return "Produto [idProduto=" + idProduto + ", descricao=" + descricao + ", quantidadeEstoque=" + quantidadeEstoque
+		return "Produto [idProduto=" + idProduto + ", nomeProduto=" + nomeProduto + ", descricao=" + descricao + ", quantidadeEstoque=" + quantidadeEstoque
 				+ ", caminhoFoto=" + caminhoFoto + ", fotoEmString=" + fotoEmString + ", fornecedor=" + fornecedor
-				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getDescricao()=" + getDescricao()
+				+ ", inativo=" + inativo + ", getIdProduto()=" + getIdProduto() + ", getNomeProduto()=" + getNomeProduto() + ", getDescricao()=" + getDescricao()
 				+ ", getQuantidadeEstoque()=" + getQuantidadeEstoque() + ", isInativo()=" + isInativo()
 				+ ", getFornecedor()=" + getFornecedor() + ", getCaminhoFoto()=" + getCaminhoFoto()
 				+ ", getFotoEmString()=" + getFotoEmString() 
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}
-	
-	
-	
 }

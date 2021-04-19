@@ -144,8 +144,4 @@ public class PedidoCompra {
 		
 		return String.format("Pedido %d - %s", this.idPedido, this.getFornecedor().getRazaoSocial() );
 	}
-	
-	
-	
-	
 }
