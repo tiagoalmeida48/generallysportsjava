@@ -26,10 +26,10 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	public List<Produto> findAllByInativoFalse();
 	
-	@Query(value = "SELECT * FROM tb_produto WHERE inativo = 'false' AND quantidade_estoque > 0", nativeQuery = true)
+	@Query(value = "SELECT * FROM tb_produto WHERE inativo = 'false'", nativeQuery = true)
 	public List<Produto> findAllByInativoFalseAndEstoque();
 
-	@Query(value = "SELECT * FROM tb_produto WHERE inativo = 'false' AND quantidade_estoque > 0 AND categoria = :categoria", nativeQuery = true)
+	@Query(value = "SELECT * FROM tb_produto WHERE inativo = 'false' AND categoria = :categoria", nativeQuery = true)
 	public List<Produto> findAllByInativoFalseAndEstoqueAndCategoria(@Param("categoria") String categoria);
 
 	public Page<Produto> findAll(Pageable paginacao);
