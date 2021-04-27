@@ -80,7 +80,9 @@ public class UsuarioApiController {
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 		final UserDetails userDetails = usuarioService.loadUserByUsername(authenticationRequest.getUsername());
 		final String token = jwtTokenService.generateToken(userDetails);
-		return ResponseEntity.ok(new JwtResponseDTO(token));
+
+		// DEVOLVER O TOKEN E USUARIO
+		return ResponseEntity.ok(userDetails + token);
 	}
 
 	// Metodo que realiza a autenticacao no Spring Security
