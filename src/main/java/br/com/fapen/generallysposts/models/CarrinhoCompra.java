@@ -19,13 +19,16 @@ public class CarrinhoCompra {
 	@Column(name = "id_usuario")
 	private Long idUsuario;
 
+	@Column(name = "id_produto")
+	private Long idProduto;
+	
 	private String produto;	
 
 	@Column(length = 255)
 	private String descricao;
 
 	@Column(name = "quantidade_carrinho")
-	private int quantidadeCarrinho;
+	private Long quantidadeCarrinho;
 
 	@Column(name = "preco_venda")
 	private BigDecimal precoVenda;
@@ -40,11 +43,19 @@ public class CarrinhoCompra {
 	public void setIdCarrinho(Long idCarrinho) {
 		this.idCarrinho = idCarrinho;
 	}
+
+	public Long getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
+	}
 	
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
-
+	
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
@@ -65,11 +76,11 @@ public class CarrinhoCompra {
 		this.descricao = descricao;
 	}
 	
-	public int getQuantidadeCarrinho() {
+	public Long getQuantidadeCarrinho() {
 		return quantidadeCarrinho;
 	}
 
-	public void setQuantidadeCarrinho(int quantidadeCarrinho) {
+	public void setQuantidadeCarrinho(Long quantidadeCarrinho) {
 		this.quantidadeCarrinho = quantidadeCarrinho;
 	}
 
