@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fapen.generallysposts.models.CarrinhoCompra;
+import br.com.fapen.generallysposts.models.Produto;
 import br.com.fapen.generallysposts.repositories.CarrinhoCompraRepository;
+import br.com.fapen.generallysposts.services.ArquivoService;
 
 @RestController
 @CrossOrigin
@@ -29,11 +31,23 @@ public class CarrinhoCompraApiController {
 
 	@Autowired
 	private CarrinhoCompraRepository carrinhoCompraRep;
+	
+	@Autowired
+	private ArquivoService arquivoService;
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Object> listarCarrinhoPorUsuario(@PathVariable Long id) throws IOException {
 		List<CarrinhoCompra> carrinhoCompra =  carrinhoCompraRep.findByIdUsuario(id).stream()
 			.collect(Collectors.toList()); 
+
+		for (CarrinhoCompra carrinho : carrinhoCompra) {
+			if (carrinho.getIdProduto().getCaminhoFoto() != null) {
+				carrinho.getIdProduto().setFotoEmString(
+						"data:image/png;base64," + arquivoService.ImageToString(carrinho.getIdProduto().getCaminhoFoto()));
+			} else {
+				carrinho.getIdProduto().setFotoEmString("");
+			}
+		}
 
 		if(carrinhoCompra.isEmpty())
 			return new ResponseEntity<Object>(carrinhoCompra, HttpStatus.NOT_FOUND);
@@ -44,6 +58,7 @@ public class CarrinhoCompraApiController {
 	@PostMapping
 	public ResponseEntity<Object> incluir(@Valid @RequestBody CarrinhoCompra carrinhoCompra) {
 		carrinhoCompraRep.save(carrinhoCompra);
+		System.out.println(carrinhoCompra);
 		return new ResponseEntity<Object>(carrinhoCompra, HttpStatus.CREATED);
 	}
 

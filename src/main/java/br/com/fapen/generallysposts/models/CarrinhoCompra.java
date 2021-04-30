@@ -2,11 +2,14 @@ package br.com.fapen.generallysposts.models;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity(name = "tb_carrinho_compra")
 public class CarrinhoCompra {
@@ -19,23 +22,13 @@ public class CarrinhoCompra {
 	@Column(name = "id_usuario")
 	private Long idUsuario;
 
-	@Column(name = "id_produto")
-	private Long idProduto;
-	
-	private String produto;	
-
-	@Column(length = 255)
-	private String descricao;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_produto")
+	private Produto idProduto;
 
 	@Column(name = "quantidade_carrinho")
 	private Long quantidadeCarrinho;
 
-	@Column(name = "preco_venda")
-	private BigDecimal precoVenda;
-	
-	@Column(name = "caminho_foto")
-	private String caminhoFoto;
-	
 	public Long getIdCarrinho() {
 		return idCarrinho;
 	}
@@ -44,38 +37,22 @@ public class CarrinhoCompra {
 		this.idCarrinho = idCarrinho;
 	}
 
-	public Long getIdProduto() {
-		return idProduto;
-	}
-
-	public void setIdProduto(Long idProduto) {
-		this.idProduto = idProduto;
-	}
-	
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
-	
+
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	
-	public String getProduto() {
-		return produto;
-	}
-	
-	public void setProduto(String produto) {
-		this.produto = produto;
-	}
-	
-	public String getDescricao() {
-		return descricao;
+
+	public Produto getIdProduto() {
+		return idProduto;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setIdProduto(Produto idProduto) {
+		this.idProduto = idProduto;
 	}
-	
+
 	public Long getQuantidadeCarrinho() {
 		return quantidadeCarrinho;
 	}
@@ -84,19 +61,4 @@ public class CarrinhoCompra {
 		this.quantidadeCarrinho = quantidadeCarrinho;
 	}
 
-	public BigDecimal getPrecoVenda() {
-		return precoVenda;
-	}
-
-	public void setPrecoVenda(BigDecimal precoVenda) {
-		this.precoVenda = precoVenda;
-	}
-
-	public String getCaminhoFoto() {
-		return caminhoFoto;
-	}
-
-	public void setCaminhoFoto(String caminhoFoto) {
-		this.caminhoFoto = caminhoFoto;
-	}
 }
