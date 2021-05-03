@@ -41,11 +41,11 @@ public class CarrinhoCompraApiController {
 			.collect(Collectors.toList()); 
 
 		for (CarrinhoCompra carrinho : carrinhoCompra) {
-			if (carrinho.getIdProduto().getCaminhoFoto() != null) {
-				carrinho.getIdProduto().setFotoEmString(
-						"data:image/png;base64," + arquivoService.ImageToString(carrinho.getIdProduto().getCaminhoFoto()));
+			if (carrinho.getProduto().getCaminhoFoto() != null) {
+				carrinho.getProduto().setFotoEmString(
+						"data:image/png;base64," + arquivoService.ImageToString(carrinho.getProduto().getCaminhoFoto()));
 			} else {
-				carrinho.getIdProduto().setFotoEmString("");
+				carrinho.getProduto().setFotoEmString("");
 			}
 		}
 
@@ -58,7 +58,6 @@ public class CarrinhoCompraApiController {
 	@PostMapping
 	public ResponseEntity<Object> incluir(@Valid @RequestBody CarrinhoCompra carrinhoCompra) {
 		carrinhoCompraRep.save(carrinhoCompra);
-		System.out.println(carrinhoCompra);
 		return new ResponseEntity<Object>(carrinhoCompra, HttpStatus.CREATED);
 	}
 

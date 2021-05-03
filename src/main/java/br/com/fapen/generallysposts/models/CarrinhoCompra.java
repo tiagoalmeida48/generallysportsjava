@@ -22,9 +22,9 @@ public class CarrinhoCompra {
 	@Column(name = "id_usuario")
 	private Long idUsuario;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "id_produto")
-	private Produto idProduto;
+	private Produto produto;
 
 	@Column(name = "quantidade_carrinho")
 	private Long quantidadeCarrinho;
@@ -45,12 +45,12 @@ public class CarrinhoCompra {
 		this.idUsuario = idUsuario;
 	}
 
-	public Produto getIdProduto() {
-		return idProduto;
+	public Produto getProduto() {
+		return produto;
 	}
 
-	public void setIdProduto(Produto idProduto) {
-		this.idProduto = idProduto;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 	public Long getQuantidadeCarrinho() {
