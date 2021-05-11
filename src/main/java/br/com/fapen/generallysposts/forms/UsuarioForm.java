@@ -25,8 +25,6 @@ public class UsuarioForm {
 			this.listaPerfil.add(perfil);
 		}
 	}
-	
-	
 
 	public String getConfirmaSenha() {
 		return confirmaSenha;
@@ -58,7 +56,5 @@ public class UsuarioForm {
 
 	public void setListaPerfil(List<Perfil> listaPerfil) {
 		this.listaPerfil = listaPerfil;
-	}
-	
-	
+	}	
 }

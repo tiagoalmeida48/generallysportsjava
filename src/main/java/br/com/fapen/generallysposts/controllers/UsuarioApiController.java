@@ -29,7 +29,9 @@ import br.com.fapen.generallysposts.DTO.Base64ImageRequestDTO;
 import br.com.fapen.generallysposts.DTO.JwtRequestDTO;
 import br.com.fapen.generallysposts.DTO.JwtResponseDTO;
 import br.com.fapen.generallysposts.forms.UsuarioForm;
+import br.com.fapen.generallysposts.models.Endereco;
 import br.com.fapen.generallysposts.models.Usuario;
+import br.com.fapen.generallysposts.repositories.EnderecoRepository;
 import br.com.fapen.generallysposts.repositories.UsuarioRepository;
 import br.com.fapen.generallysposts.services.ArquivoService;
 import br.com.fapen.generallysposts.services.EmailService;
@@ -57,6 +59,9 @@ public class UsuarioApiController {
 
 	@Autowired
 	private EmailService emailService;
+
+	@Autowired
+	private EnderecoRepository enderecoRep;
 
 	@Autowired
 	private UsuarioFormValidator usuarioFormValidator;
@@ -106,7 +111,7 @@ public class UsuarioApiController {
 		}
 		usuarioService.salvar(usuarioForm);
 
-		emailService.enviarEmailHtml(usuarioForm.getUsuario().getEmail(), "Cadastro de Usuário - Seuphone",
+		emailService.enviarEmailHtml(usuarioForm.getUsuario().getEmail(), "Cadastro de Usuário - Generally Sports",
 				HtmlTemplate.emailCadastro(usuarioForm.getUsuario().getLogin(),
 						usuarioForm.getUsuario().getPessoa().getNome(), usuarioForm.getUsuario().getEmail()));
 		
@@ -145,19 +150,13 @@ public class UsuarioApiController {
 	}
 	
 	@CrossOrigin
-	@PutMapping(value = "/addressUpdate")
-	public ResponseEntity<Usuario> AlterarEndereco(@RequestBody Usuario usuario) throws IOException {
-
-
+	@PutMapping(value = "/addressUpdate/{id}")
+	public ResponseEntity<Object> AlterarEndereco(@RequestBody Endereco endereco, @PathVariable Long id) {
 		
-		Usuario user = usuarioRep.findByLogin(usuario.getLogin());
+		endereco.setId(id);
 		
-		user.getPessoa().setEndereco(usuario.getPessoa().getEndereco());
-		usuario.setFotoEmString("");
-		usuarioRep.save(user);
-		
-
-		return new ResponseEntity<Usuario>(HttpStatus.ACCEPTED);
+		enderecoRep.save(endereco);
+		return new ResponseEntity<Object>(endereco, HttpStatus.ACCEPTED);
 	}
 
 }

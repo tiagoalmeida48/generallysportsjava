@@ -64,7 +64,6 @@ public class UsuarioFormValidator implements Validator {
 			}
 		}
 		
-
 		// Verifica se login existe
 		if (usuarioRep.existsByLogin(usuarioForm.getUsuario().getLogin())
 				&& !usuarioRep.findByLogin(usuarioForm.getUsuario().getLogin()).getIdLogin()

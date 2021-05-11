@@ -168,6 +168,103 @@
 										</div>
 									</div>
 
+									<div class="row">
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.cep" cssClass="validate fmt-cep"
+												placeholder="09111-222" />
+											<f:errors path="usuario.pessoa.endereco.cep" cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.cep">CEP</label>
+										</div>
+
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.logradouro" cssClass="validate"
+												placeholder="Rua Ipiranga" />
+											<f:errors path="usuario.pessoa.endereco.logradouro"
+												cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.logradouro">Logradouro</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.bairro" cssClass="validate"
+												placeholder="Vila Matriz" />
+											<f:errors path="usuario.pessoa.endereco.bairro"
+												cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.bairro">Bairro</label>
+										</div>
+
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.numero" cssClass="validate"
+												type="number" placeholder="1234" />
+											<f:errors path="usuario.pessoa.endereco.numero"
+												cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.numero">Número</label>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:select path="usuario.pessoa.endereco.uf" id="usuario.pessoa.endereco.uf"
+												cssClass="validate">
+												<f:option value="">Selecione um estado</f:option>
+												<f:option value="AC">AC</f:option>
+												<f:option value="AL">AL</f:option>
+												<f:option value="AM">AM</f:option>
+												<f:option value="AP">AP</f:option>
+												<f:option value="BA">BA</f:option>
+												<f:option value="CE">CE</f:option>
+												<f:option value="DF">DF</f:option>
+												<f:option value="ES">ES</f:option>
+												<f:option value="GO">GO</f:option>
+												<f:option value="MA">MA</f:option>
+												<f:option value="MG">MG</f:option>
+												<f:option value="MS">MS</f:option>
+												<f:option value="MT">MT</f:option>
+												<f:option value="PA">PA</f:option>
+												<f:option value="PB">PB</f:option>
+												<f:option value="PE">PE</f:option>
+												<f:option value="PI">PI</f:option>
+												<f:option value="PR">PR</f:option>
+												<f:option value="RJ">RJ</f:option>
+												<f:option value="RN">RN</f:option>
+												<f:option value="RS">RS</f:option>
+												<f:option value="RO">RO</f:option>
+												<f:option value="RR">RR</f:option>
+												<f:option value="SC">SC</f:option>
+												<f:option value="SE">SE</f:option>
+												<f:option value="SP">SP</f:option>
+												<f:option value="TO">TO</f:option>
+											</f:select>
+											<f:errors path="usuario.pessoa.endereco.uf" cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.uf">UF</label>
+										</div>
+
+
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.cidade" cssClass="validate"
+												placeholder="São Paulo" />
+											<f:errors path="usuario.pessoa.endereco.cidade"
+												cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.cidade">Cidade</label>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s6">
+											<i class="material-icons prefix">description</i>
+											<f:input path="usuario.pessoa.endereco.complemento" cssClass="validate"
+												placeholder="Casa do portão branco" />
+											<f:errors path="usuario.pessoa.endereco.complemento"
+												cssClass="helper-text red-text" />
+											<label for="usuario.pessoa.endereco.complemento">Complemento</label>
+										</div>
+									</div>
 
 									<sec:authorize access="hasRole('ROLE_ADMIN')">
 										<div class="row">

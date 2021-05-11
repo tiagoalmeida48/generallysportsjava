@@ -19,4 +19,6 @@ public interface CarrinhoCompraRepository extends JpaRepository<CarrinhoCompra, 
 	@Modifying(clearAutomatically = true)
 	@Query(value = "select tb_carrinho_compra.id_carrinho, tb_carrinho_compra.id_usuario, tb_carrinho_compra.quantidade_carrinho, tb_produto.* from tb_carrinho_compra inner join tb_produto on tb_carrinho_compra.id_produto = tb_produto.id_produto where tb_carrinho_compra.id_usuario = :idUsuario", nativeQuery = true)
 	public List<CarrinhoCompra> findByIdUsuario(@Param("idUsuario") Long usuario);
+
+	
 }
