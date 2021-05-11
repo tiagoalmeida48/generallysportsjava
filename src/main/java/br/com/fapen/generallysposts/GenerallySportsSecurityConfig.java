@@ -59,7 +59,7 @@ public class GenerallySportsSecurityConfig extends WebSecurityConfigurerAdapter 
 			http.cors().and().csrf().disable()
 				.antMatcher("/api/**").authorizeRequests()
 				.antMatchers("/api/usuarios/login").permitAll()
-				.antMatchers("/api/usuarios/criarUsuario").permitAll()
+				.antMatchers(HttpMethod.POST, "/api/usuarios/criarUsuario").permitAll()
 				.antMatchers("/api/esqueci-senha").permitAll()
 				.antMatchers("/api/produtos/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/api/**").permitAll()
