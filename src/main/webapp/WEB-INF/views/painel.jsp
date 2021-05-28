@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,8 +31,8 @@
 						<a href="${s:mvcUrl('listarUsuarios').build() }">
 							<div style="padding: 30px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">person</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">person</i> <span
+									class="white-text">
 									<h5>Usuários</h5>
 								</span>
 							</div>
@@ -41,8 +41,8 @@
 						<a href="${s:mvcUrl('listarPerfis').build() }">
 							<div style="padding: 30px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">people</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">people</i> <span
+									class="white-text">
 									<h5>Perfis</h5>
 								</span>
 							</div>
@@ -51,8 +51,8 @@
 						<a href="${s:mvcUrl('listarProdutos').build() }">
 							<div style="padding: 30px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">store</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">store</i> <span
+									class="white-text">
 									<h5>Produtos</h5>
 								</span>
 							</div>
@@ -62,8 +62,8 @@
 						<a href="${s:mvcUrl('listarPedidos').build() }">
 							<div style="padding: 30px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">assignment</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">assignment</i> <span
+									class="white-text">
 									<h5>Pedidos</h5>
 								</span>
 							</div>
@@ -72,19 +72,31 @@
 						<a href="${s:mvcUrl('listarFornecedores').build() }">
 							<div style="padding: 30px 20px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">business_center</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">business_center</i> <span
+									class="white-text">
 									<h5>Fornecedor</h5>
 								</span>
 							</div>
 						</a>
-						<div class="col s1"></div>
+						<div class="row"></div>
 						<a href="${s:mvcUrl('listarNotasFiscais').build() }">
 							<div style="padding: 30px; border-radius: 10px;"
 								class="col s3 waves-effect black-seuphone">
-								<i class="white-text large material-icons">description</i>
-								<span class="white-text">
+								<i class="white-text large material-icons">description</i> <span
+									class="white-text">
 									<h5>NFE</h5>
+								</span>
+							</div>
+						</a>
+						
+						</a>
+						<div class="col s1"></div>
+						<a href="${s:mvcUrl('listarVoucher').build() }">
+							<div style="padding: 30px; border-radius: 10px;"
+								class="col s3 waves-effect black-seuphone">
+								<i class="white-text large material-icons">description</i> <span
+									class="white-text">
+									<h5>Voucher</h5>
 								</span>
 							</div>
 						</a>
