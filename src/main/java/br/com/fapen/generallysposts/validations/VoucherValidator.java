@@ -5,19 +5,21 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import br.com.fapen.generallysposts.models.Produto;
+import br.com.fapen.generallysposts.models.Voucher;
 
 @Component
 public class VoucherValidator implements Validator {
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return Produto.class.isAssignableFrom(clazz);
+		return Voucher.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nomeVoucher", "campo.obrigatorio");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "custoUnitario", "campo.obrigatorio");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "precoVenda", "campo.obrigatorio");
 }
 
 }

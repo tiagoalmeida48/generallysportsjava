@@ -35,6 +35,12 @@ public class Voucher {
 	private String caminhoFoto;
 	
 	private String fotoEmString;
+	
+	@Column(columnDefinition = "boolean default false")
+	private boolean inativo;
+	
+	@Column(name = "quantidade_estoque")
+	private int quantidadeEstoque;
 
 	public Long getIdVoucher() {
 		return idVoucher;
@@ -99,9 +105,32 @@ public class Voucher {
 	public void setFotoEmString(String fotoEmString) {
 		this.fotoEmString = fotoEmString;
 	}
+
+	public boolean isInativo() {
+		return inativo;
+	}
+
+	public void setInativo(boolean inativo) {
+		this.inativo = inativo;
+	}
+
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
+	}
+
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+	
+	@Override
+	public String toString() {
+		return "Voucher [idVoucher=" + idVoucher + ", nomeVoucher=" + nomeVoucher + ", quantidadeEstoque=" + quantidadeEstoque
+				+ ", caminhoFoto=" + caminhoFoto + ", fotoEmString=" + fotoEmString + ", inativo=" + inativo + ", getIdVoucher()=" + getIdVoucher() + ", getNomeVoucher()=" + getNomeVoucher() + ", getQuantidadeEstoque()=" + getQuantidadeEstoque() + ", isInativo()=" + isInativo()
+				+ ", getCaminhoFoto()=" + getCaminhoFoto()
+				+ ", getFotoEmString()=" + getFotoEmString() 
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	
 	
-	
-	
-	
+	}
 }

@@ -42,7 +42,7 @@ public class VoucherService {
         }
 
         if(busca.equals("")) {
-            return listaVoucher = voucherRep.findAllByOrderByIdVoucherAsc(Paginacao.getPaginacao(pagina));
+            return listaVoucher = voucherRep.findByInativoFalse(Paginacao.getPaginacao(pagina));
         } else {
            return listaVoucher = voucherRep.findAll(Paginacao.getPaginacao(pagina));
         }

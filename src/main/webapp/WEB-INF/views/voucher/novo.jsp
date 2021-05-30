@@ -68,9 +68,9 @@
 										</c:if>
 									</div>
 
-									<f:form action="${s:mvcUrl('alterarFotoProduto').build() }"
+									<f:form action="${s:mvcUrl('alterarFotoVoucher').build() }"
 										method="POST" enctype="multipart/form-data"
-										modelAttribute="produto">
+										modelAttribute="voucher">
 										<f:hidden path="idProduto" />
 										<div class="file-field input-field">
 											<div class="btn indigo">
@@ -87,53 +87,21 @@
 								</c:if>
 
 								<f:form method="POST"
-									action="${s:mvcUrl('salvarProduto').build() }"
-									modelAttribute="produto" class="col s12">
-									<f:hidden path="idProduto" />
+									action="${s:mvcUrl('salvarVoucher').build() }"
+									modelAttribute="voucher" class="col s12">
+									<f:hidden path="idVoucher" />
 
 
 									<div class="row">
 										<div class="input-field col s6">
 											<i class="material-icons prefix">inventory_2</i>
-											<f:input path="nomeProduto" cssClass="validate"
-												placeholder="Nome do produto" />
-											<f:errors path="nomeProduto" cssClass="helper-text red-text" />
-											<label for="nomeProduto">Produto</label>
+											<f:input path="nomeVoucher" cssClass="validate"
+												placeholder="Nome do voucher" />
+											<f:errors path="nomeVoucher" cssClass="helper-text red-text" />
+											<label for="nomeVoucher">Voucher</label>
 										</div>
-										<div class="input-field col s6">
-											<i class="material-icons prefix">description</i>
-											<f:input path="descricao" cssClass="validate"
-												placeholder="Descrição do Produto" />
-											<f:errors path="descricao" cssClass="helper-text red-text" />
-											<label for="descricao">Descrição</label>
-										</div>
-									</div>
-									<div class="row">
-										<div class="input-field col s6">
-											<i class="material-icons prefix">people</i>
-											<f:select path="fornecedor">
-												<c:if test="${produto.fornecedor != null }">
-													<f:option selected="true" value="${produto.fornecedor }"
-														label="${produto.fornecedor.razaoSocial }" />
-												</c:if>
-												<f:option value="">Selecione um Fornecedor</f:option>
-												<c:forEach items="${listaFornecedores}" var="fornecedor">
-													<f:option value="${fornecedor.id}">${fornecedor.razaoSocial}</f:option>
-												</c:forEach>
-											</f:select>
-											<f:errors path="fornecedor" cssClass="helper-text red-text" />
-										</div>
-										<div class="input-field col s6">
-											<i class="material-icons prefix">Categoria</i>
-											<f:select path="categoria" id="categoria" cssClass="validate">
-												<f:option value="">Selecione uma categoria</f:option>
-												<f:option value="Acessórios">Acessórios</f:option>
-												<f:option value="Suplementos">Suplementos</f:option>
-												<f:option value="Modas">Modas</f:option>
-											</f:select>
-											<f:errors path="categoria" cssClass="helper-text red-text" />
-										</div>
-									</div>
+		
+										
 
 									<div class="row">
 										<div class="input-field col s6">
@@ -161,18 +129,8 @@
 											<f:errors path="precoVenda" cssClass="helper-text red-text" />
 											<label for="precoVenda">Preço de Venda</label>
 										</div>
-										<sec:authorize access="hasRole('ROLE_ADMIN')">
-											<div class="input-field col s6">
-												<i class="material-icons prefix">description</i>
-												<f:select path="inativo" id="inativo" cssClass="validate">
-													<f:option value="false">Ativo</f:option>
-													<f:option value="true">Inativo</f:option>
-												</f:select>
-												<f:errors path="inativo" cssClass="helper-text red-text" />
-												<label for="inativo">Status do Produto</label>
-											</div>
-									</div>
-									</sec:authorize>
+										
+									
 							</div>
 						</div>
 
@@ -180,7 +138,7 @@
 					<div class="card-action">
 						<div class="row">
 
-							<a href="${s:mvcUrl('listarProdutos').build() }"
+							<a href="${s:mvcUrl('listarVoucher').build() }"
 								class="waves-effect waves-light btn red"><i
 								class="material-icons left">arrow_back</i>Voltar</a>
 

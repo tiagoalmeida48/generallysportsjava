@@ -87,7 +87,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${listaPaginada.content}" var="produto">
+							<c:forEach items="${listaPaginada.content}" var="voucher">
 								<tr>
 									<td>${voucher.idVoucher}</td>
 									<td><c:if
