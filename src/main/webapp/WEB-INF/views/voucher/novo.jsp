@@ -71,7 +71,7 @@
 									<f:form action="${s:mvcUrl('alterarFotoVoucher').build() }"
 										method="POST" enctype="multipart/form-data"
 										modelAttribute="voucher">
-										<f:hidden path="idProduto" />
+										<f:hidden path="idVoucher" />
 										<div class="file-field input-field">
 											<div class="btn indigo">
 												<span><i class="material-icons">attach_file</i></span> <input
