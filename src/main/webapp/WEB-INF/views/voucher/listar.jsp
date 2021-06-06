@@ -99,7 +99,7 @@
 											<img src="/img/${voucher.getCaminhoFoto() }"
 												class="product-image" width=30 alt="Imagem do Voucher">
 										</c:if></td>
-									<td>${voucher.nomeVoucher}</td>
+									<td>${voucher.titulo}</td>
 									<td><fmt:formatNumber value="${voucher.precoVenda}"
 											type="currency" /></td>
 
@@ -118,7 +118,7 @@
 
 										<button href="#modalExcluir"
 											class="modal-excluir modal-trigger waves-effect waves-light btn-small red"
-											data-descr="${voucher.nomeVoucher }" data-tabela="voucher"
+											data-descr="${voucher.titulo }" data-tabela="voucher"
 											data-id="${voucher.idVoucher }" title="Excluir">
 											<i class="material-icons red-text text-darken-3">delete</i>
 											<f:form

@@ -93,11 +93,6 @@ public class VoucherController {
 		atributos.addFlashAttribute("mensagemSucesso", "Voucher salvo com sucesso!");
 		return new ModelAndView("redirect:/voucher");
 	}
-
-	//private ModelAndView newVoucher(@Valid Voucher voucher) {
-		// TODO Auto-generated method stub
-		//return null;
-	//}
 	
 	@GetMapping(value = "/{id}/editar", name = "editarVoucher")
 	public ModelAndView editVoucher(@PathVariable Long id, Model model) {

@@ -1,16 +1,12 @@
 package br.com.fapen.generallysposts.models;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity(name = "tb_voucher")
 public class Voucher {
@@ -20,16 +16,10 @@ public class Voucher {
 	@Column(name = "id_voucher")
 	private Long idVoucher;
 	
-	private BigDecimal custoUnitario;
 	private BigDecimal precoVenda;
-	private Double saldoAtual;
 	
 	@Column(name = "voucher")
-	private String nomeVoucher;
-	
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "data_validade")
-	private LocalDate validade;
+	private String titulo;
 	
 	@Column(name = "caminho_foto")
 	private String caminhoFoto;
@@ -38,9 +28,6 @@ public class Voucher {
 	
 	@Column(columnDefinition = "boolean default false")
 	private boolean inativo;
-	
-	@Column(name = "quantidade_estoque")
-	private int quantidadeEstoque;
 
 	public Long getIdVoucher() {
 		return idVoucher;
@@ -48,14 +35,6 @@ public class Voucher {
 
 	public void setIdVoucher(Long idVoucher) {
 		this.idVoucher = idVoucher;
-	}
-
-	public BigDecimal getCustoUnitario() {
-		return custoUnitario;
-	}
-
-	public void setCustoUnitario(BigDecimal custoUnitario) {
-		this.custoUnitario = custoUnitario;
 	}
 
 	public BigDecimal getPrecoVenda() {
@@ -66,28 +45,12 @@ public class Voucher {
 		this.precoVenda = precoVenda;
 	}
 
-	public Double getSaldoAtual() {
-		return saldoAtual;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setSaldoAtual(Double saldoAtual) {
-		this.saldoAtual = saldoAtual;
-	}
-
-	public String getNomeVoucher() {
-		return nomeVoucher;
-	}
-
-	public void setNomeVoucher(String nomeVoucher) {
-		this.nomeVoucher = nomeVoucher;
-	}
-
-	public LocalDate getValidade() {
-		return validade;
-	}
-
-	public void setValidade(LocalDate validade) {
-		this.validade = validade;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getCaminhoFoto() {
@@ -113,24 +76,20 @@ public class Voucher {
 	public void setInativo(boolean inativo) {
 		this.inativo = inativo;
 	}
-
-	public int getQuantidadeEstoque() {
-		return quantidadeEstoque;
-	}
-
-	public void setQuantidadeEstoque(int quantidadeEstoque) {
-		this.quantidadeEstoque = quantidadeEstoque;
-	}
 	
 	@Override
 	public String toString() {
-		return "Voucher [idVoucher=" + idVoucher + ", nomeVoucher=" + nomeVoucher + ", quantidadeEstoque=" + quantidadeEstoque
-				+ ", caminhoFoto=" + caminhoFoto + ", fotoEmString=" + fotoEmString + ", inativo=" + inativo + ", getIdVoucher()=" + getIdVoucher() + ", getNomeVoucher()=" + getNomeVoucher() + ", getQuantidadeEstoque()=" + getQuantidadeEstoque() + ", isInativo()=" + isInativo()
-				+ ", getCaminhoFoto()=" + getCaminhoFoto()
-				+ ", getFotoEmString()=" + getFotoEmString() 
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
-	
-	
+		return "Voucher [idVoucher=" + idVoucher 
+			+ ", titulo=" + titulo 
+			+ ", caminhoFoto=" + caminhoFoto 
+			+ ", fotoEmString=" + fotoEmString 
+			+ ", inativo=" + inativo 
+			+ ", getIdVoucher()=" + getIdVoucher() 
+			+ ", titulo()=" + getTitulo() 
+			+ ", isInativo()=" + isInativo()
+			+ ", getCaminhoFoto()=" + getCaminhoFoto()
+			+ ", getFotoEmString()=" + getFotoEmString() 
+			+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+			+ ", toString()=" + super.toString() + "]";
 	}
 }

@@ -64,7 +64,7 @@
 							</div>
 							<div class="card-content">
 								<h5 style="text-transform: uppercase;" class="black-text">
-									${voucher.nomeVoucher}</h5>
+									${voucher.titulo}</h5>
 								<hr />
 
 								<table class="striped">
@@ -78,10 +78,6 @@
 											<td>Valor:</td>
 											<td><fmt:formatNumber value="${voucher.precoVenda}"
 													type="currency" /></td>
-										</tr>
-										<tr>
-											<td>Quantidade Estoque:</td>
-											<td>${voucher.quantidadeEstoque}</td>
 										</tr>
 										<tr>
 											<td>Status:</td>

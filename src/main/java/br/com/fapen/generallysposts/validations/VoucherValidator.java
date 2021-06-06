@@ -17,8 +17,7 @@ public class VoucherValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nomeVoucher", "campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "custoUnitario", "campo.obrigatorio");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "titulo", "campo.obrigatorio");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "precoVenda", "campo.obrigatorio");
 }
 
